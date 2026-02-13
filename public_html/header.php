@@ -1,4 +1,5 @@
 <?php // header.php - NOW NORMAL SCROLLING HEADER (scrolls away like regular page content) ?>
+<link rel="stylesheet" href="/css/styles.css">
 <header class="bg-black text-white shadow-lg"> <!-- removed fixed-top -->
   <!-- LOGO SECTION -->
   <div class="logo-section text-center py-4" style="background-color: #000 !important;">
