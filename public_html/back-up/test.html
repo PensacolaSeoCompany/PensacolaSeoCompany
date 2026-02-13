@@ -1,0 +1,65 @@
+<script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pensacolaseocompany.com/#organization",
+      "name": "Pensacola Seo Company",
+      "url": "https://pensacolaseocompany.com/",
+      "email": "pensacolaseocompany@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "213 Russ Dr",
+        "addressLocality": "Gulf Breeze, Florida",
+        "postalCode": "32561"
+      },
+      "acceptedPaymentMethod": [
+        {
+          "@type": "PaymentMethod",
+          "paymentMethodType": "https://schema.org/COD",
+          "name": "Cash on Delivery"
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "pensacolaseocompany@gmail.com",
+          "contactType": "customer service"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pensacolaseocompany.com/#website",
+      "url": "https://pensacolaseocompany.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pensacolaseocompany.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@id": "https://pensacolaseocompany.com/#organization"
+      }
+    },
+    {
+      "@type": "LocalBusiness", 
+      "@id": "https://pensacolaseocompany.com/#localbusiness",
+      "name": "Pensacola Seo Company - Local Services",
+      "description": "SEO services in Gulf Breeze and surrounding areas.",
+      "areaServed": {
+        "@type": "Country",
+        "@id": "https://en.wikipedia.org/wiki/United_States",
+        "name": "United States"
+      },
+      "owns": {
+        "@id": "https://pensacolaseocompany.com/#organization" 
+      },
+      "url": {
+        "@id": "https://pensacolaseocompany.com/#website"
+      }
+    }
+  ]
+}
+</script>

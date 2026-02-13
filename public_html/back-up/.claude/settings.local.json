@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs file:*)",
+      "Bash(php process-articles.php:*)",
+      "Bash(where:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

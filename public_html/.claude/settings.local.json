@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs file:*)",
+      "Bash(php process-articles.php:*)",
+      "Bash(where:*)",
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(for:*)",
+      "Bash(do)",
+      "Bash(if ! grep -q 'include __DIR__ . \"\"/../author-card.php\"\"' \"$f\")",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(fi:*)",
+      "Bash(done)",
+      "Bash(php add-silo-links.php:*)",
+      "Bash(chmod +x \"C:\\\\Users\\\\Chris\\\\Desktop\\\\public_html\\\\add-silo-links.sh\")",
+      "Bash(bash \"C:\\\\Users\\\\Chris\\\\Desktop\\\\public_html\\\\add-silo-links.sh\")"
+    ]
+  }
+}

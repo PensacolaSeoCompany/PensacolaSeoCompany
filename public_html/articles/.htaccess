@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Remove .php extension (internal rewrite)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Redirect .php URLs to clean URLs (301)
+RewriteCond %{THE_REQUEST} \s/+articles/(.+?)\.php[\s?] [NC]
+RewriteRule ^ /articles/%1 [R=301,L]
