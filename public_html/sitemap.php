@@ -77,6 +77,7 @@
             <li><a href="https://pensacolaseocompany.com/">Pensacola SEO Company | Locally owned SEO Agency</a></li>
             <li><a href="https://pensacolaseocompany.com/about">About Page for Pensacola Seo Company Own By SEO Expert Christopher Simpson</a></li>
             <li><a href="https://pensacolaseocompany.com/contact-page">Contact</a></li>
+            <li><a href="https://pensacolaseocompany.com/portfolio">Our Portfolio | Web Design & SEO Projects</a></li>
             <li><a href="https://pensacolaseocompany.com/privacy-policy">Privacy Policy</a></li>
             <li><a href="https://pensacolaseocompany.com/blog">SEO Blog Content by Pensacola Seo Company</a></li>
             <li><a href="https://pensacolaseocompany.com/case-studies">SEO Case Studies</a></li>

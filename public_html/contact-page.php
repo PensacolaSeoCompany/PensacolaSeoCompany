@@ -21,7 +21,7 @@
     <div class="container">
       <h1 class="display-3 fw-bold text-primary text-center mb-5">Contact Us</h1>
       <p class="lead fs-4 text-dark opacity-90 text-center lh-lg mb-5">
-        Have questions about SEO for your Pensacola business? Ready to get started? Fill out the form below or call (850) 123-4567 for your free consultation with Christopher Simpson.
+        Have questions about SEO for your Pensacola business? Ready to get started? Fill out the form below or call <?php include 'phone-number.php'; ?> for your free consultation with Christopher Simpson.
       </p>
       <!-- COMPANY EMAIL BLOCK -->
       <div class="text-center mb-5">

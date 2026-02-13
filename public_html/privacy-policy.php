@@ -138,7 +138,7 @@
             <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
             <p class="mb-0">
               Email: info@pensacolaseocompany.com<br>
-              Phone: (850) 123-4567<br>
+              Phone: <?php include 'phone-number.php'; ?><br>
               Address: Pensacola, Florida
             </p>
 

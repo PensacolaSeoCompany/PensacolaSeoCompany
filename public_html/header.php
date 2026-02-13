@@ -1,174 +1,563 @@
-<?php // header.php - NOW NORMAL SCROLLING HEADER (scrolls away like regular page content) ?>
+<?php // header.php - Sticky navigation, seosly.com-inspired clean cream design ?>
 <link rel="stylesheet" href="/css/styles.css">
-<header class="bg-black text-white shadow-lg"> <!-- removed fixed-top -->
-  <!-- LOGO SECTION -->
-  <div class="logo-section text-center py-4" style="background-color: #000 !important;">
-    <a href="/">
-      <img
-        src="/images/pensacola-seo-company-logo.png"
-        alt="Pensacola SEO Company Logo"
-        class="img-fluid"
-        style="height: 100px; width: auto;"
-      >
-    </a>
-  </div>
-  <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-3 py-lg-4" style="background-color: #000 !important;">
-    <div class="container position-relative">
-      <!-- Mobile toggler -->
-      <button class="navbar-toggler ms-auto d-lg-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Navigation links -->
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav mx-auto text-uppercase fw-semibold fs-5 align-items-center">
-          <li class="nav-item"><a class="nav-link px-3" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="/contact-page">Contact</a></li>
-         
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle px-3" href="/about" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-            <ul class="dropdown-menu dropdown-menu-dark border-0 shadow">
-              <li><a class="dropdown-item" href="/about">About</a></li>
-              <li><a class="dropdown-item" href="/blog">Blog</a></li>
-              <li><a class="dropdown-item" href="/case-studies">Case Studies</a></li>
-              <li><a class="dropdown-item" href="/testimonials">Testimonials</a></li>
-              <li><a class="dropdown-item" href="/social-media-posts">Social Media Posts</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle px-3" role="button" data-bs-toggle="dropdown" aria-expanded="false">SEO Services</a>
-            <ul class="dropdown-menu dropdown-menu-dark border-0 shadow">
-              <li><a class="dropdown-item" href="/seo-services">SEO</a></li>
-              <li><a class="dropdown-item" href="/local-seo">Local SEO</a></li>
-              <li><a class="dropdown-item" href="/monthly-seo">Monthly SEO</a></li>
-              <li><a class="dropdown-item" href="/seo-audits">SEO Audits</a></li>
-            </ul>
-          </li>
-         
-         <!-- <li class="nav-item">
-  <a class="nav-link px-3" href="/industries">Industries</a>
-</li> -->
-          <li class="nav-item ms-lg-5">
-              <button type="button" class="btn btn-danger btn-lg text-dark fw-bold rounded-pill px-5 shadow" data-bs-toggle="modal" data-bs-target="#contactModal">
-        I'M READY TO RANK
-    </button>
-          </li>
-        </ul>
+
+<!-- ===== STICKY NAV BAR ===== -->
+<header class="site-header" id="siteHeader">
+  <nav class="header-nav">
+    <div class="header-inner">
+
+      <!-- LOGO -->
+      <a href="/" class="header-logo">
+        <img
+          src="/images/pensacola-seo-company-logo.png"
+          alt="Pensacola SEO Company Logo"
+          width="180"
+          height="50"
+        >
+      </a>
+
+      <!-- NAV LINKS (desktop) -->
+      <ul class="header-links" id="headerLinks">
+        <li><a href="/">Home</a></li>
+
+        <li class="has-dropdown">
+          <a href="/about" class="dropdown-trigger">About <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul class="header-dropdown">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li><a href="/testimonials">Testimonials</a></li>
+            <li><a href="/social-media-posts">Social Media</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="/seo-services" class="dropdown-trigger">Services <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul class="header-dropdown">
+            <li><a href="/seo-services">SEO Services</a></li>
+            <li><a href="/local-seo">Local SEO</a></li>
+            <li><a href="/monthly-seo">Monthly SEO</a></li>
+            <li><a href="/seo-audits">SEO Audits</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/contact-page">Contact</a></li>
+      </ul>
+
+      <!-- RIGHT SIDE: phone + CTA -->
+      <div class="header-right">
+        <div class="header-phone-wrap">
+          <?php include 'phone-number.php'; ?>
+        </div>
+        <button type="button" class="header-cta" data-bs-toggle="modal" data-bs-target="#contactModal">
+          Get a Free Audit
+        </button>
       </div>
+
+      <!-- HAMBURGER (mobile) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
-  <style>
-    .nav-link {
-      color: white !important;
-    }
-  </style>
-<!-- Modal with Form -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content" style="background-color: #000 !important; color: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-            <div class="modal-header border-0">
-              
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-4">
-                <form id="contactForm" action="/contact" method="POST">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <label for="name" class="form-label fw-bold fs-5">Name</label>
-                            <input type="text" class="form-control form-control-lg bg-dark text-white border-secondary" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="email" class="form-label fw-bold fs-5">Email</label>
-                            <input type="email" class="form-control form-control-lg bg-dark text-white border-secondary" id="email" name="email" placeholder="your.email@example.com" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="phone" class="form-label fw-bold fs-5">Phone</label>
-                            <input type="tel" class="form-control form-control-lg bg-dark text-white border-secondary" id="phone" name="phone" placeholder="(850) 123-4567" required>
-                        </div>
-                    </div>
-                    <!-- COMMENTS / MESSAGE FIELD -->
-                    <div class="mt-4">
-                        <label for="message" class="form-label fw-bold fs-5">Comments / Message (optional)</label>
-                        <textarea class="form-control form-control-lg bg-dark text-white border-secondary" id="message" name="message" rows="5" placeholder="Tell me about your business, your goals, or any specific questions you have..."></textarea>
-                    </div>
-                    <!-- Date/Time Picker (Calendar) below the fields -->
-                    <div class="mt-4">
-                        <p class="text-white fw-medium fs-5 mb-2">All times are scheduled in Central Time Zone (CST)</p>
-                        <label for="datetime" class="form-label fw-bold fs-5">Select Date and Time (optional)</label>
-                        <input type="datetime-local" class="form-control form-control-lg bg-dark text-white border-secondary" id="datetime" name="datetime">
-                    </div>
-                    <!-- MATH CAPTCHA -->
-                    <div class="row g-4 mt-4">
-                        <div class="col-12">
-                            <label for="math" class="form-label fw-bold fs-5">What is 5 + 5?</label>
-                            <input type="text" class="form-control form-control-lg bg-dark text-white border-secondary" id="math" name="math" placeholder="Enter your answer" required>
-                        </div>
-                    </div>
-                    <!-- HOW MAY WE HELP YOU CHECKBOXES -->
-                    <div class="mt-5">
-                        <p class="lead fs-4 text-center opacity-90 mb-4">How may we help you?</p>
-                        <div class="row g-3 justify-content-center">
-                            <div class="col-md-4 text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gbp" name="interest[]" value="GBP Optimization">
-                                    <label class="form-check-label fs-5 fw-medium" for="gbp">GBP Optimization</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="seo" name="interest[]" value="Internet Marketing/SEO">
-                                    <label class="form-check-label fs-5 fw-medium" for="seo">Internet Marketing/SEO</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4 text-center">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="general" name="interest[]" value="General questions">
-                                    <label class="form-check-label fs-5 fw-medium" for="general">General questions</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- REQUIRED CONSENT DISCLAIMER -->
-                    <div class="text-center mt-5">
-                        <div class="form-check justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required>
-                            <label class="form-check-label fs-6 fw-medium text-start ms-2" for="consent">
-                                I agree to receive emails, SMS messages, and other digital communications from <strong>Pensacola SEO Company</strong> regarding services, promotions, and updates. I understand that my information will never be sold or shared outside the company, and I can unsubscribe at any time.*
-                            </label>
-                        </div>
-                    </div>
-                    <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-danger btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg fs-4">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul class="mobile-links">
+      <li><a href="/">Home</a></li>
+      <li class="mobile-has-dropdown">
+        <button class="mobile-dropdown-trigger">About <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <ul class="mobile-sub">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/social-media-posts">Social Media</a></li>
+        </ul>
+      </li>
+      <li class="mobile-has-dropdown">
+        <button class="mobile-dropdown-trigger">Services <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <ul class="mobile-sub">
+          <li><a href="/seo-services">SEO Services</a></li>
+          <li><a href="/local-seo">Local SEO</a></li>
+          <li><a href="/monthly-seo">Monthly SEO</a></li>
+          <li><a href="/seo-audits">SEO Audits</a></li>
+        </ul>
+      </li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/contact-page">Contact</a></li>
+    </ul>
+    <div class="mobile-phone">
+      <?php include 'phone-number.php'; ?>
     </div>
-</div>
-<!-- JavaScript for Time Validation -->
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        const dtInput = document.getElementById('datetime');
-        if (dtInput.value) {
-            const timeStr = dtInput.value.split('T')[1];
-            if (timeStr) {
-                const [h, m] = timeStr.split(':').map(Number);
-                if (h < 9 || h > 16 || (h === 16 && m > 0)) {
-                    alert('Please select a time between 9:00 AM and 4:00 PM CST.');
-                    e.preventDefault();
-                }
-            }
-        }
-    });
-</script>
-<!-- CSS for Calendar Icon Color -->
+    <button type="button" class="header-cta mobile-cta" data-bs-toggle="modal" data-bs-target="#contactModal">
+      Get a Free Audit
+    </button>
+  </div>
+</header>
+
+<!-- ===== HEADER STYLES ===== -->
 <style>
-    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-        filter: invert(1); /* Inverts the icon color to white */
-        color: white; /* Fallback */
-    }
+/* --- Fixed bar + body offset --- */
+body {
+  padding-top: 80px;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* --- Nav bar --- */
+.header-nav {
+  background: rgba(247, 245, 231, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 80px;
+}
+
+/* --- Logo --- */
+.header-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.header-logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* --- Desktop nav links --- */
+.header-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.header-links > li {
+  position: relative;
+}
+.header-links > li > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  text-transform: none;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.header-links > li > a:hover,
+.header-links > li > a:focus {
+  color: #fd5353;
+  background: rgba(253, 83, 83, 0.06);
+}
+.chevron-icon {
+  transition: transform 0.25s ease;
+}
+.has-dropdown:hover .chevron-icon {
+  transform: rotate(180deg);
+}
+
+/* --- Dropdown --- */
+.header-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 210px;
+  background: #faf8ee;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  list-style: none;
+  margin: 0;
+  z-index: 100;
+}
+.has-dropdown:hover > .header-dropdown {
+  display: block;
+}
+.header-dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.header-dropdown li a:hover {
+  background: rgba(253, 83, 83, 0.07);
+  color: #fd5353;
+}
+
+/* --- Right side (phone + CTA) --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Override phone link styling for cream header */
+.header-phone-wrap .phone-link {
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.header-phone-wrap .phone-link:hover {
+  color: #fd5353;
+}
+.header-phone-wrap .phone-link .bi-telephone-fill {
+  color: #fd5353;
+}
+
+/* --- CTA pill button --- */
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #fd5353;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(253, 83, 83, 0.3);
+}
+.header-cta:hover {
+  background: #e94444;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(253, 83, 83, 0.4);
+}
+
+/* --- Hamburger --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1010;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* --- Mobile drawer --- */
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(247, 245, 231, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 24px;
+  overflow-y: auto;
+  z-index: 999;
+}
+.mobile-drawer.is-open {
+  display: block;
+}
+.mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mobile-links > li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.mobile-links > li > a,
+.mobile-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 4px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+.mobile-links > li > a:hover,
+.mobile-dropdown-trigger:hover {
+  color: #fd5353;
+}
+.mobile-dropdown-trigger .chevron-icon {
+  transition: transform 0.25s ease;
+}
+.mobile-dropdown-trigger.is-open .chevron-icon {
+  transform: rotate(180deg);
+}
+.mobile-sub {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 8px 16px;
+}
+.mobile-sub.is-open {
+  display: block;
+}
+.mobile-sub li a {
+  display: block;
+  padding: 10px 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.mobile-sub li a:hover {
+  color: #fd5353;
+}
+.mobile-phone {
+  padding: 20px 0 12px;
+  text-align: center;
+}
+.mobile-phone .phone-link {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+.mobile-phone .phone-link:hover {
+  color: #fd5353;
+}
+.mobile-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+  padding: 14px 24px;
+  font-size: 16px;
+}
+
+/* --- Responsive breakpoints --- */
+@media (max-width: 991px) {
+  .header-links,
+  .header-right {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
+/* --- Subtle scroll shadow --- */
+.site-header.scrolled .header-nav {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
 </style>
-  
+
+<!-- ===== HEADER JAVASCRIPT ===== -->
+<script>
+(function() {
+  // Hamburger toggle
+  var burger = document.getElementById('hamburgerBtn');
+  var drawer = document.getElementById('mobileDrawer');
+  if (burger && drawer) {
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('is-open');
+      drawer.classList.toggle('is-open');
+      document.body.style.overflow = drawer.classList.contains('is-open') ? 'hidden' : '';
+    });
+  }
+
+  // Mobile dropdown toggles
+  document.querySelectorAll('.mobile-dropdown-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('is-open');
+      var sub = btn.nextElementSibling;
+      if (sub) sub.classList.toggle('is-open');
+    });
+  });
+
+  // Close drawer when a mobile link is clicked
+  document.querySelectorAll('.mobile-links a, .mobile-sub a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (burger) burger.classList.remove('is-open');
+      if (drawer) drawer.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Scroll shadow effect
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+})();
+</script>
+
+<!-- ===== CONTACT MODAL ===== -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background: #faf8ee; color: #333; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.06);">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold fs-4" id="contactModalLabel" style="color: #333;">Get Your Free SEO Audit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form id="contactForm" action="/contact" method="POST">
+          <div class="row g-4">
+            <div class="col-md-4">
+              <label for="name" class="form-label fw-bold" style="color: #333;">Name</label>
+              <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Your Name" required
+                style="background: #fff; color: #333; border: 1px solid #ddd; border-radius: 8px;">
+            </div>
+            <div class="col-md-4">
+              <label for="email" class="form-label fw-bold" style="color: #333;">Email</label>
+              <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="your.email@example.com" required
+                style="background: #fff; color: #333; border: 1px solid #ddd; border-radius: 8px;">
+            </div>
+            <div class="col-md-4">
+              <label for="phone" class="form-label fw-bold" style="color: #333;">Phone</label>
+              <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="(850) 123-4567" required
+                style="background: #fff; color: #333; border: 1px solid #ddd; border-radius: 8px;">
+            </div>
+          </div>
+          <div class="mt-4">
+            <label for="message" class="form-label fw-bold" style="color: #333;">Comments / Message (optional)</label>
+            <textarea class="form-control form-control-lg" id="message" name="message" rows="4"
+              placeholder="Tell me about your business, your goals, or any questions you have..."
+              style="background: #fff; color: #333; border: 1px solid #ddd; border-radius: 8px;"></textarea>
+          </div>
+          <div class="mt-4">
+            <p class="fw-medium mb-2" style="color: #666; font-size: 14px;">All times are scheduled in Central Time Zone (CST)</p>
+            <label for="datetime" class="form-label fw-bold" style="color: #333;">Select Date and Time (optional)</label>
+            <input type="datetime-local" class="form-control form-control-lg" id="datetime" name="datetime"
+              style="background: #fff; color: #333; border: 1px solid #ddd; border-radius: 8px;">
+          </div>
+          <div class="row g-4 mt-3">
+            <div class="col-12">
+              <label for="math" class="form-label fw-bold" style="color: #333;">What is 5 + 5?</label>
+              <input type="text" class="form-control form-control-lg" id="math" name="math" placeholder="Enter your answer" required
+                style="background: #fff; color: #333; border: 1px solid #ddd; border-radius: 8px;">
+            </div>
+          </div>
+          <div class="mt-4">
+            <p class="fs-5 text-center mb-3" style="color: #333; font-weight: 600;">How may we help you?</p>
+            <div class="row g-3 justify-content-center">
+              <div class="col-md-4 text-center">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gbp" name="interest[]" value="GBP Optimization">
+                  <label class="form-check-label fw-medium" for="gbp" style="color: #333;">GBP Optimization</label>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="seo" name="interest[]" value="Internet Marketing/SEO">
+                  <label class="form-check-label fw-medium" for="seo" style="color: #333;">Internet Marketing/SEO</label>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="general" name="interest[]" value="General questions">
+                  <label class="form-check-label fw-medium" for="general" style="color: #333;">General questions</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <div class="form-check justify-content-center">
+              <input class="form-check-input" type="checkbox" id="consent" name="consent" value="yes" required>
+              <label class="form-check-label fs-6 fw-medium text-start ms-2" for="consent" style="color: #555;">
+                I agree to receive emails, SMS messages, and other digital communications from <strong>Pensacola SEO Company</strong> regarding services, promotions, and updates. I understand that my information will never be sold or shared outside the company, and I can unsubscribe at any time.*
+              </label>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-lg px-5 py-3 fw-bold rounded-pill shadow-sm" style="background: #fd5353; color: #fff; font-size: 1.1rem; border: none;">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Time Validation -->
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  var dtInput = document.getElementById('datetime');
+  if (dtInput.value) {
+    var timeStr = dtInput.value.split('T')[1];
+    if (timeStr) {
+      var parts = timeStr.split(':').map(Number);
+      var h = parts[0], m = parts[1];
+      if (h < 9 || h > 16 || (h === 16 && m > 0)) {
+        alert('Please select a time between 9:00 AM and 4:00 PM CST.');
+        e.preventDefault();
+      }
+    }
+  }
+});
+</script>
+
+<!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -564,21 +953,21 @@
                 "name": "SEO Services",
                 "@id": "https://pensacolaseocompany.com/seo-services",
                 "url": "https://pensacolaseocompany.com/seo-services",
-                "description": "Florida SEO Services - Sustainable growth, ROI, and brand visibility are critical components of any businesses’ core strategy. In 2020 and beyond, that strategy means “digital”. At Pensacola SEO Company we take an omni-channel approach, combining the best and most effective channels for an all-encompassing, holistic solution to helping your business thrive and compete in today’s fast paced market."
+                "description": "Florida SEO Services - Sustainable growth, ROI, and brand visibility are critical components of any businesses' core strategy. In 2020 and beyond, that strategy means \u201cdigital\u201d. At Pensacola SEO Company we take an omni-channel approach, combining the best and most effective channels for an all-encompassing, holistic solution to helping your business thrive and compete in today\u2019s fast paced market."
               },
               {
                 "@type": "Service",
                 "name": "Local SEO",
                 "@id": "https://pensacolaseocompany.com/local-seo",
                 "url": "https:// pensacolaseocompany.com/local-seo",
-                "description": "Local SEO - The Pensacola SEO Company team is jam packed with expert marketers and SEO professionals, but we’ve also got a keen eye for local optimization. Our talented Florida SEO is expertly skilled, with combined decades of experience creating strategies that both amaze and convert. We combine the creative and practical to help turn your vision into a reality that will impress your target audience, rank well on search engines, and represent your business in a way you can be proud of."
+                "description": "Local SEO - The Pensacola SEO Company team is jam packed with expert marketers and SEO professionals, but we\u2019ve also got a keen eye for local optimization. Our talented Florida SEO is expertly skilled, with combined decades of experience creating strategies that both amaze and convert. We combine the creative and practical to help turn your vision into a reality that will impress your target audience, rank well on search engines, and represent your business in a way you can be proud of."
               },
               {
                 "@type": "Service",
                 "name": "Monthly SEO",
                 "@id": "https://pensacolaseocompany.com/monthly-seo",
                 "url": "https://pensacolaseocompany.com/monthly-seo",
-                "description": "Monthly SEO - In 2018, and as things continue to change, internet marketers, as well as business owners are wondering whether search engine optimization(SEO) is a thing of the past. Well, the short answer is ‘NO’, and in this read, we are going to see why. The truth is, SEO isn’t dying, but it has somewhat become more of a tactical game. Currently, a robust SEO skill set can make a substantial difference to your business’ digital platform. The most important thing to remember is that the technology utilized by search engines is constantly being updated to give better results. Not too long ago, webmasters simply stuffed websites with keywords, random content and links. At the time, this used to give tremendous results in rankings. However, the manner in which search engines rank content has drastically changed."
+                "description": "Monthly SEO - In 2018, and as things continue to change, internet marketers, as well as business owners are wondering whether search engine optimization(SEO) is a thing of the past. Well, the short answer is 'NO', and in this read, we are going to see why. The truth is, SEO isn't dying, but it has somewhat become more of a tactical game. Currently, a robust SEO skill set can make a substantial difference to your business' digital platform. The most important thing to remember is that the technology utilized by search engines is constantly being updated to give better results. Not too long ago, webmasters simply stuffed websites with keywords, random content and links. At the time, this used to give tremendous results in rankings. However, the manner in which search engines rank content has drastically changed."
               },
               {
                 "@type": "Service",
@@ -592,7 +981,7 @@
                 "name": "Lawyer SEO",
                 "@id": "https://pensacolaseocompany.com/seo-for-lawyers",
                 "url": "https://pensacolaseocompany.com/seo-for-lawyers",
-                "description": "Lawyer SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client’s expectations at all times."
+                "description": "Lawyer SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client's expectations at all times."
               },
               {
                 "@type": "Service",
@@ -606,7 +995,7 @@
                 "name": "Auto Repair SEO",
                 "@id": "https://pensacolaseocompany.com/seo-for-auto-repair",
                 "url": "https://pensacolaseocompany.com/seo-for-auto-repair",
-                "description": "Auto Repair SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client’s expectations at all times."
+                "description": "Auto Repair SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client's expectations at all times."
               },
               {
                 "@type": "Service",
@@ -620,7 +1009,7 @@
                 "name": "Home Remodelers SEO",
                 "@id": "https://pensacolaseocompany.com/seo-for-home-remodelers",
                 "url": "https://pensacolaseocompany.com/seo-for-home-remodelers",
-                "description": "Home Remodelers SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client’s expectations at all times."
+                "description": "Home Remodelers SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client's expectations at all times."
               },
               {
                 "@type": "Service",
@@ -634,7 +1023,7 @@
                 "name": "Pool Builders SEO",
                 "@id": "https://pensacolaseocompany.com/seo-for-pool-builders",
                 "url": "https://pensacolaseocompany.com/seo-for-pool-builders",
-                "description": "Pool Builders SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client’s expectations at all times."
+                "description": "Pool Builders SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client's expectations at all times."
               },
               {
                 "@type": "Service",
@@ -648,7 +1037,7 @@
                 "name": "Laundromats SEO",
                 "@id": "https://pensacolaseocompany.com/seo-for-laundromats",
                 "url": "https://pensacolaseocompany.com/seo-for-laundromats",
-                "description": "Laundromats SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client’s expectations at all times."
+                "description": "Laundromats SEO - The Software Development professionals at Pensacola SEO Company have a wide range of experience, education, and unique skills to develop specialized software for your business. Our combined knowledge in web design and development enables us to create custom options for all industries, affordably. Recognized as a reliable brand name in the industry, we have an excellent record ensuring that we meet our client's expectations at all times."
               }
             ]
           }
@@ -885,17 +1274,16 @@
   ]
 }
 </script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17426953510"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-17426953510');
 </script>
-<!-- Event snippet for Contact conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- Event snippet for Contact conversion page -->
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -911,20 +1299,11 @@ function gtag_report_conversion(url) {
 }
 </script>
 
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-11M5ZXP159"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-11M5ZXP159');
 </script>
-
-
-
-
-</header>
-
-<!-- NO MORE BODY PADDING STYLE - header now scrolls normally -->

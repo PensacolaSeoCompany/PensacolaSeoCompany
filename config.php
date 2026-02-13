@@ -6,11 +6,11 @@
  * This file lives OUTSIDE public_html so it is not web-accessible.
  */
 
-// Hostinger SMTP settings (port 465 / SSL)
-define('SMTP_HOST', 'smtp.hostinger.com');
-define('SMTP_PORT', 465);
-define('SMTP_USERNAME', 'contact@pensacolaseocompany.com');
-define('SMTP_PASSWORD', 'CHANGE_ME_SMTP_PASSWORD'); // <-- UPDATE THIS with the real mailbox password
-define('SMTP_FROM_EMAIL', 'contact@pensacolaseocompany.com');
+// Gmail SMTP settings (port 587 / STARTTLS)
+define('SMTP_HOST', 'smtp.gmail.com');
+define('SMTP_PORT', 587);
+define('SMTP_USERNAME', 'pensacolaseocompany@gmail.com');
+define('SMTP_PASSWORD', 'zvmw uaks hetx jtnk');
+define('SMTP_FROM_EMAIL', 'no-reply@pensacolaseocompany.com');
 define('SMTP_FROM_NAME', 'Pensacola SEO Company');
-define('CONTACT_EMAIL', 'contact@pensacolaseocompany.com');
+define('CONTACT_EMAIL', 'pensacolaseocompany@gmail.com');
