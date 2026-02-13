@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pensacola SEO Company | Locally Owned SEO Agency</title>
-  <meta name="description" content="Pensacola SEO Company helps local businesses dominate Google search results in Pensacola, Gulf Breeze, Pace, Milton, and Northwest Florida.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="canonical" href="https://pensacolaseocompany.com/">
+<?php
+/**
+ * index.php - Homepage for Pensacola SEO Company
+ *
+ * Uses modular includes:
+ * - includes/head.php (HTML head section)
+ * - header.php (nav + modal + schema + analytics)
+ * - includes/stats-bar.php (trust metrics)
+ * - includes/service-card.php (service cards)
+ * - includes/portfolio-card.php (portfolio preview cards)
+ * - includes/blog-card.php (blog post cards)
+ * - footer.php
+ */
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pensacola SEO Company | Locally Owned SEO Agency">
-  <meta property="og:description" content="Grow your Pensacola business with expert SEO. Local strategies that drive real traffic, leads, and revenue.">
-  <meta property="og:url" content="https://pensacolaseocompany.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Pensacola SEO Company">
-  <meta property="og:image" content="https://pensacolaseocompany.com/images/pensacola-seo-company-logo.png">
+// Page-specific variables for head.php
+$page_title = 'Pensacola SEO Company | Locally Owned SEO Agency';
+$page_description = 'Pensacola SEO Company helps local businesses dominate Google search results in Pensacola, Gulf Breeze, Pace, Milton, and Northwest Florida.';
+$page_url = 'https://pensacolaseocompany.com/';
+$page_type = 'website';
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
+include 'includes/head.php';
+?>
 <body>
   <?php include 'header.php'; ?>
 
@@ -54,36 +54,7 @@
   <!-- ============================================================
        2. TRUST BAR (white background)
        ============================================================ -->
-  <section class="trust-bar bg-white">
-    <div class="container">
-      <div class="row g-3 justify-content-center">
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-number">5+</div>
-            <div class="trust-label">Years Experience</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-number">50+</div>
-            <div class="trust-label">Clients Served</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-number">5-Star</div>
-            <div class="trust-label">Client Rated</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="trust-item">
-            <div class="trust-number"><i class="bi bi-patch-check-fill"></i></div>
-            <div class="trust-label">Google Certified</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php include 'includes/stats-bar.php'; ?>
 
   <!-- ============================================================
        3. SERVICES OVERVIEW (cream background)
@@ -91,56 +62,48 @@
   <section class="py-5 bg-cream">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 class="section-heading">Our SEO Services</h2>
+        <h2 class="section-heading">Our Services</h2>
         <p class="section-subheading">
           Everything you need to dominate local search and grow your business online.
         </p>
       </div>
-      <div class="row g-4">
-        <!-- SEO -->
-        <div class="col-lg-3 col-md-6">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="bi bi-search"></i>
-            </div>
-            <h3>SEO</h3>
-            <p>Comprehensive SEO strategies to boost your site's visibility, optimize on-page elements, and drive organic traffic for long-term growth in Pensacola.</p>
-            <a href="/seo-services" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        <!-- Local SEO -->
-        <div class="col-lg-3 col-md-6">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="bi bi-geo-alt"></i>
-            </div>
-            <h3>Local SEO</h3>
-            <p>Targeted local search optimization to get your business in front of Pensacola customers, including Google Business Profile mastery and map pack rankings.</p>
-            <a href="/local-seo" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        <!-- Monthly SEO -->
-        <div class="col-lg-3 col-md-6">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="bi bi-calendar-check"></i>
-            </div>
-            <h3>Monthly SEO</h3>
-            <p>Ongoing monthly SEO packages for consistent results, including content updates, link building, and performance tracking to keep your rankings climbing.</p>
-            <a href="/monthly-seo" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-        <!-- SEO Audits -->
-        <div class="col-lg-3 col-md-6">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="bi bi-clipboard-data"></i>
-            </div>
-            <h3>SEO Audits</h3>
-            <p>In-depth SEO audits that uncover every issue holding your site back &mdash; from indexing problems to missed keyword opportunities &mdash; with a clear action plan.</p>
-            <a href="/seo-audits" class="learn-more">Learn More <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
+      <div class="row g-4 justify-content-center">
+        <?php
+        // Service card 1: SEO
+        $service_icon = 'search';
+        $service_title = 'SEO';
+        $service_desc = 'Comprehensive SEO strategies to boost your site\'s visibility, optimize on-page elements, and drive organic traffic for long-term growth in Pensacola.';
+        $service_link = '/seo-services';
+        include 'includes/service-card.php';
+
+        // Service card 2: Local SEO
+        $service_icon = 'geo-alt';
+        $service_title = 'Local SEO';
+        $service_desc = 'Targeted local search optimization to get your business in front of Pensacola customers, including Google Business Profile mastery and map pack rankings.';
+        $service_link = '/local-seo';
+        include 'includes/service-card.php';
+
+        // Service card 3: Monthly SEO
+        $service_icon = 'calendar-check';
+        $service_title = 'Monthly SEO';
+        $service_desc = 'Ongoing monthly SEO packages for consistent results, including content updates, link building, and performance tracking to keep your rankings climbing.';
+        $service_link = '/monthly-seo';
+        include 'includes/service-card.php';
+
+        // Service card 4: SEO Audits
+        $service_icon = 'clipboard-data';
+        $service_title = 'SEO Audits';
+        $service_desc = 'In-depth SEO audits that uncover every issue holding your site back &mdash; from indexing problems to missed keyword opportunities &mdash; with a clear action plan.';
+        $service_link = '/seo-audits';
+        include 'includes/service-card.php';
+
+        // Service card 5: Web Design
+        $service_icon = 'palette';
+        $service_title = 'Web Design';
+        $service_desc = 'Custom, mobile-first websites built for speed and conversions. No templates &mdash; every site is hand-coded with SEO baked in from the ground up.';
+        $service_link = '/web-design';
+        include 'includes/service-card.php';
+        ?>
       </div>
     </div>
   </section>
@@ -212,42 +175,34 @@
         </p>
       </div>
       <div class="row g-4 justify-content-center">
-        <!-- Project 1: Happy Shingle Designs -->
-        <div class="col-lg-4 col-md-6">
-          <div class="portfolio-preview-card">
-            <div class="portfolio-preview-icon" style="background: linear-gradient(135deg, #dc3545, #c82333);">
-              <i class="bi bi-house-heart"></i>
-            </div>
-            <div class="card-body">
-              <h4>Happy Shingle Designs</h4>
-              <p>Multi-page roofing contractor site with service pages, project gallery, and Pensacola-themed design.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project 2: Aesthetic Journey -->
-        <div class="col-lg-4 col-md-6">
-          <div class="portfolio-preview-card">
-            <div class="portfolio-preview-icon" style="background: linear-gradient(135deg, #c9a84c, #a08030);">
-              <i class="bi bi-heart-pulse"></i>
-            </div>
-            <div class="card-body">
-              <h4>Aesthetic Journey</h4>
-              <p>Luxury plastic surgery practice site with video hero, surgeon profiles, and before/after gallery.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project 3: Pensacola Comfort Pros -->
-        <div class="col-lg-4 col-md-6">
-          <div class="portfolio-preview-card">
-            <div class="portfolio-preview-icon" style="background: linear-gradient(135deg, #0d6efd, #0b5ed7);">
-              <i class="bi bi-thermometer-half"></i>
-            </div>
-            <div class="card-body">
-              <h4>Pensacola Comfort Pros</h4>
-              <p>Content-rich HVAC company site with service request form, coupons, and service area coverage.</p>
-            </div>
-          </div>
-        </div>
+        <?php
+        // Portfolio card 1: Happy Shingle Designs
+        $portfolio_name = 'Happy Shingle Designs';
+        $portfolio_desc = 'Multi-page roofing contractor site with service pages, project gallery, and Pensacola-themed design.';
+        $portfolio_url = '';
+        $portfolio_industry = 'Roofing';
+        $portfolio_color = '#dc3545';
+        $portfolio_icon = 'house-heart';
+        include 'includes/portfolio-card.php';
+
+        // Portfolio card 2: Aesthetic Journey
+        $portfolio_name = 'Aesthetic Journey';
+        $portfolio_desc = 'Luxury plastic surgery practice site with video hero, surgeon profiles, and before/after gallery.';
+        $portfolio_url = '';
+        $portfolio_industry = 'Medical';
+        $portfolio_color = '#c9a84c';
+        $portfolio_icon = 'heart-pulse';
+        include 'includes/portfolio-card.php';
+
+        // Portfolio card 3: Pensacola Comfort Pros
+        $portfolio_name = 'Pensacola Comfort Pros';
+        $portfolio_desc = 'Content-rich HVAC company site with service request form, coupons, and service area coverage.';
+        $portfolio_url = '';
+        $portfolio_industry = 'HVAC';
+        $portfolio_color = '#0d6efd';
+        $portfolio_icon = 'thermometer-half';
+        include 'includes/portfolio-card.php';
+        ?>
       </div>
       <div class="text-center mt-5">
         <a href="/portfolio" class="btn btn-coral px-4 py-2">View All Projects</a>
@@ -284,45 +239,28 @@
         </p>
       </div>
       <div class="row g-4">
-        <!-- Blog Card 1 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="blog-card-clean">
-            <div class="blog-card-icon">
-              <i class="bi bi-search"></i>
-            </div>
-            <div class="card-body">
-              <h5>Top 5 Local SEO Tips for Pensacola Businesses</h5>
-              <p>Discover actionable strategies to outrank competitors and attract more local customers in 2026.</p>
-              <a href="/top-5-local-seo-tips" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- Blog Card 2 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="blog-card-clean">
-            <div class="blog-card-icon">
-              <i class="bi bi-graph-up"></i>
-            </div>
-            <div class="card-body">
-              <h5>Why Monthly SEO Is Essential for Small Businesses</h5>
-              <p>Learn how consistent SEO maintenance can deliver 3x more leads without breaking the bank.</p>
-              <a href="/monthly-seo-essentials" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- Blog Card 3 -->
-        <div class="col-lg-4 col-md-6">
-          <div class="blog-card-clean">
-            <div class="blog-card-icon">
-              <i class="bi bi-building"></i>
-            </div>
-            <div class="card-body">
-              <h5>Laundromat SEO: Filling Machines with Local Searches</h5>
-              <p>Specific tactics for laundromats to rank for "near me" queries and increase daily foot traffic.</p>
-              <a href="/laundromat-seo-guide" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
+        <?php
+        // Blog card 1
+        $blog_title = 'Top 5 Local SEO Tips for Pensacola Businesses';
+        $blog_desc = 'Discover actionable strategies to outrank competitors and attract more local customers in 2026.';
+        $blog_link = '/top-5-local-seo-tips';
+        $blog_icon = 'search';
+        include 'includes/blog-card.php';
+
+        // Blog card 2
+        $blog_title = 'Why Monthly SEO Is Essential for Small Businesses';
+        $blog_desc = 'Learn how consistent SEO maintenance can deliver 3x more leads without breaking the bank.';
+        $blog_link = '/monthly-seo-essentials';
+        $blog_icon = 'graph-up';
+        include 'includes/blog-card.php';
+
+        // Blog card 3
+        $blog_title = 'Laundromat SEO: Filling Machines with Local Searches';
+        $blog_desc = 'Specific tactics for laundromats to rank for "near me" queries and increase daily foot traffic.';
+        $blog_link = '/laundromat-seo-guide';
+        $blog_icon = 'building';
+        include 'includes/blog-card.php';
+        ?>
       </div>
       <div class="text-center mt-5">
         <a href="/blog" class="btn btn-coral px-4 py-2">Read More Articles</a>
@@ -333,7 +271,7 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data (page-specific) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -406,6 +344,15 @@
               "name": "SEO Audits",
               "url": "https://pensacolaseocompany.com/seo-audits",
               "description": "In-depth SEO audits that uncover every issue holding your site back, with a clear action plan for improvement."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Design",
+              "url": "https://pensacolaseocompany.com/web-design",
+              "description": "Custom, mobile-first web design for Pensacola businesses. Hand-coded websites built for speed, SEO, and conversions."
             }
           }
         ]

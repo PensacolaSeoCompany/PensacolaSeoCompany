@@ -46,6 +46,7 @@
           <li><a href="/local-seo">Local SEO</a></li>
           <li><a href="/monthly-seo">Monthly SEO</a></li>
           <li><a href="/seo-audits">SEO Audits</a></li>
+          <li><a href="/web-design">Web Design</a></li>
           <li><a href="/free-seo-audit">Free SEO Audit</a></li>
         </ul>
       </div>
